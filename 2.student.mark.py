@@ -3,7 +3,7 @@ class Ultra:
         self.strudents=[]
         self.courses=[]
         self.marks={}
-class strudents:
+class students:
     def _init_(self,sid,name,dob):
         self.sid=sid
         self.name=name
@@ -29,7 +29,7 @@ def inputInfoCourse(self):
     cid=input("enter course's id")
     name=input("enter course's name")
     self.courses.append((cid,name))
-def inputMarkscourse(self):
+def inputMarksCourse(self):
     cid = input("Enter course ID for input: ")    
     checked = next((c for c in self.course if c.cid == cid), None)
     if not checked:
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         choice = input("Choose an option: ")
 
         if choice == "1":
-            Ultra.inputMarkCourses()
+            Ultra.inputMarksCourse()
         elif choice == "2":
             Ultra.outputCourseList()
         elif choice == "3":
