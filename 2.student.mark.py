@@ -1,65 +1,64 @@
 class Ultra:
-    def _init_(self): 
-        self.students=[]  
-        self.courses=[]      
-        self.marks={}    
-class student:
-    def __init__(self,sid,name,dob):
+    def _init_(self):
+        self.strudents=[]
+        self.courses=[]
+        self.marks={}
+class strudents:
+    def _init_(self,sid,name,dob):
         self.sid=sid
         self.name=name
         self.dob=dob
     def _str_(self):
-        return f"ID:{self.student_id},Name:{self.name},DoB:{self.dob}"
-class course:
+        return f"id:{self.sid},name:{self.name},dob:{self.dob}"
+class courses:
     def _init_(self,cid,name):
         self.cid=cid
         self.name=name
-    def __str__(self):
-        return f"ID:{self.cid},Name:{self.name}"
+    def _str_(self):
+        return f"id:{self.cid},name:{self.name}"
 def inputNumStudent(self):
-    return int(input("Enter the number of students:"))
+    return int(input("enter the number of student"))
+def inputNumCourse(self):
+    return int(input("enter the number of courses"))
 def inputInfoStudent(self):
-    student_id=input("Enter student ID:")
-    name=input("Enter student name:")
-    dob=input("Enter student date of birth:")
-    self.students.append((student_id,name,dob))
-def inputNumCourses(self):
-    return int(input("Enter the number of courses:"))
+    sid=input("enter student's id")
+    name=input("enter student's name")
+    dob=input("enter student's date of birth")
+    self.students.append((sid,name,dob))
 def inputInfoCourse(self):
-    cid=input("Enter course ID:")
-    name=input("Enter course name:")
+    cid=input("enter course's id")
+    name=input("enter course's name")
     self.courses.append((cid,name))
-def inputMarksCourses(self):
-    cid=input("Enter course ID to input marks for:")
-    correct=((c for c in self.course if c.cid==cid),None)
-    if not correct:
-        print("course unknown")
+def inputMarkscourse(self):
+    cid = input("Enter course ID for input: ")    
+    checked = next((c for c in self.course if c.cid == cid), None)
+    if not checked:
+        print("Course unknown")
         return
     if cid not in self.marks:
-        self.marks[cid]={}
-        for i in self.students:
-            try:
-                mark = float(input(f"Enter mark for student {i.student_id}: "))
-                self.marks[cid][i.student_id] = mark
-            except ValueError:
-                print("Invalid mark entered. Skipping this student.")
+        self.marks[cid] = {}
+    for student in self.students:
+        try:
+            mark = float(input(f"Enter mark for student {student.sid}: "))
+            self.marks[cid][student.sid] = mark
+        except ValueError:
+            print("Invalid mark. Skipping this student.")
 def outputCourseList(self):
-    print("Courses:")
+    print("courses:")
     for j in self.courses:
         print(j)
 def outputStudentList(self):
-    print("Students:")
+    print("students:")
     for k in self.students:
         print(k)
 def outputStudentMarks(self):
-    cid=input("Enter course ID to view marks:")
+    cid=input("enter course id for output")
     if cid not in self.marks:
-        print("No marks found for this course!")
+        print("course unknown")
         return
-    print(f"Marks for course {cid}:")
-    for student_id,mark in self.marks[cid].items():
-        print(f"Student ID:{student_id},Mark:{mark}")
-
+    print(f"marks for course {cid}:")
+    for sid,mark in self.marks[cid].itens():
+        print(f"student's id:{sid},mark:{mark}")
 if __name__ == "__main__":
     Ultra = Ultra()
 
@@ -82,13 +81,13 @@ if __name__ == "__main__":
         choice = input("Choose an option: ")
 
         if choice == "1":
-            Ultra.input_marks_for_course()
+            Ultra.inputMarkCourses()
         elif choice == "2":
-            Ultra.output_course_list()
+            Ultra.outputCourseList()
         elif choice == "3":
-            Ultra.output_student_list()
+            Ultra.outputStudentList()
         elif choice == "4":
-            Ultra.output_student_marks()
+            Ultra.outputStudentMarks()
         elif choice == "5":
             break
         else:
