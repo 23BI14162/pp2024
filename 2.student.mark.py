@@ -1,20 +1,20 @@
 class Ultra:
-    def _init_(self):
+    def __init__(self):
         self.strudents=[]
         self.courses=[]
         self.marks={}
 class students:
-    def _init_(self,sid,name,dob):
+    def __init__(self,sid,name,dob):
         self.sid=sid
         self.name=name
         self.dob=dob
-    def _str_(self):
+    def __str__(self):
         return f"id:{self.sid},name:{self.name},dob:{self.dob}"
 class courses:
-    def _init_(self,cid,name):
+    def __init__(self,cid,name):
         self.cid=cid
         self.name=name
-    def _str_(self):
+    def __str__(self):
         return f"id:{self.cid},name:{self.name}"
 def inputNumStudent(self):
     return int(input("enter the number of student"))
