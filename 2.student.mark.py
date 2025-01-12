@@ -23,9 +23,11 @@ class Ultra:
 
     def inputMarksCourse(self):
         cid = input("Enter course ID for input: ")
-        course = next((c for c in self.courses if c.cid == cid), None)
-        if not course:
-            print("Course unknown.")
+        for course in self.courses:
+            if course[0] == cid:
+                break
+        else:
+            print("course unknown")
             return
         if cid not in self.marks:
             self.marks[cid] = {}
